@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: saml-to/assume-aws-role-action@main
         with:
-          role: arn:aws:iam::123456789012:role/rebooter
+          role: arn:aws:iam::656661431918:role/rebooter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: aws ec2 reboot-instances --instance-ids i-09313277b1ba99c83
