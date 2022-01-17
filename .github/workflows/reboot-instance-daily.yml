@@ -1,6 +1,9 @@
 name: Reboot Instance Daily
 
 on:
+  push:
+    branches:
+      - '*'
   workflow_dispatch:
   schedule:
     - cron: '30 5 * * *'
