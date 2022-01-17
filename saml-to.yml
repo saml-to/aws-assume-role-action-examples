@@ -1,1 +1,18 @@
-version: 12345678
+---
+version: '20220101'
+variables:
+  awsProviderArn: 'PROVIDER_ARN'
+  awsRoleArn: 'ROLE_ARN'
+providers:
+  aws:
+    entityId: https://signin.aws.amazon.com/saml
+    acsUrl: https://signin.aws.amazon.com/saml
+    attributes:
+      https://aws.amazon.com/SAML/Attributes/RoleSessionName: '<#= repo.name #>'
+      https://aws.amazon.com/SAML/Attributes/SessionDuration: '3600'
+      https://aws.amazon.com/SAML/Attributes/Role: '<#= repo.selectedRole #>,<$= awsProviderArn $>'
+permissions:
+  aws:
+    roles:
+      - name: <$= awsRoleArn $>
+        self: true
