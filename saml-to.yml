@@ -2,7 +2,7 @@
 version: '20220101'
 variables:
   awsProviderArn: 'PROVIDER_ARN'
-  awsRoleArn: 'ROLE_ARN'
+  awsRoleArn: 'arn:aws:iam::123456789012:role/rebooter'
 providers:
   aws:
     entityId: https://signin.aws.amazon.com/saml
