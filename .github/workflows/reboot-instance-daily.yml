@@ -12,7 +12,7 @@ jobs:
   reboot:
     runs-on: ubuntu-latest
     steps:
-      - uses: saml-to/assume-aws-role-action@v1
+      - uses: saml-to/assume-aws-role-action@main
         with:
           role: arn:aws:iam::123456789012:role/rebooter
         env:
