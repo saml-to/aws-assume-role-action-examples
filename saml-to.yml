@@ -1,7 +1,7 @@
 ---
 version: '20220101'
 variables:
-  awsProviderArn: 'PROVIDER_ARN'
+  awsProviderArn: 'arn:aws:iam::123456789012:saml-provider/saml.to'
   awsRoleArn: 'arn:aws:iam::123456789012:role/rebooter'
 providers:
   aws:
