@@ -1,6 +1,6 @@
 # `aws-assume-role-action` Examples
 
-See the links below for example configurations using this action:
+See the links below for example configurations using the [aws-assume-role-action](https://github.com/marketplace/actions/saml-to-assume-aws-role):
 
 - [Reboot an EC2 Instance every day](https://github.com/saml-to/aws-assume-role-action-examples/tree/reboot-instance-daily)
 - [Run a `terraform plan`](https://github.com/saml-to/aws-assume-role-action-examples/tree/terraform-plan)
