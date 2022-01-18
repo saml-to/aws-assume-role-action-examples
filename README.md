@@ -10,3 +10,5 @@ See the links below for example configurations using the [aws-assume-role-action
 # Need additional examples?
 
 [Message us on Gitter](https://gitter.im/saml-to/assume-aws-role-action)
+
+![](https://sso.saml.to/github/px?examples)
