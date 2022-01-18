@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
-      - uses: saml-to/assume-aws-role-action@v1
-        with:
-          role: arn:aws:iam::656661431918:role/terraform
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: saml-to/assume-aws-role-action@v1
+      #   with:
+      #     role: arn:aws:iam::656661431918:role/terraform
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: terraform init
       - run: terraform plan
