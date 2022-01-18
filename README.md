@@ -2,7 +2,7 @@
 
 See the links below for example repositories using this action:
 
-- Reboot an EC2 Instance every day
+- [Reboot an EC2 Instance every day](https://github.com/saml-to/aws-assume-role-action-examples/tree/reboot-instance-daily)
 - Run a `terraform apply`
 - Copy a React build to AWS S3
 - Authenticate with Multiple Regions
