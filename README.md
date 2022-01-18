@@ -8,7 +8,7 @@
 
 ## GitHub Action
 
-[reboot-instance-daily.yml](.github/workflows/reboot-instance-daily.yml)
+[terraform-plan.yml](.github/workflows/terraform-plan.yml)
 
 ## Terraform Definition
 
