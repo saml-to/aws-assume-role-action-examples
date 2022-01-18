@@ -1,8 +1,10 @@
 ---
 version: "20220101"
 variables:
-  awsAccountId1: "656661431918"
-  awsAccountId2: "129924456780"
+  awsProviderArnAccount1: "arn:aws:iam::656661431918:saml-provider/saml.to"
+  awsRoleArnAccount1: "arn:aws:iam::656661431918:role/multi-account"
+  awsProviderArnAccount2: "arn:aws:iam::129924456780:saml-provider/saml.to"
+  awsRoleArnAccount2: "arn:aws:iam::129924456780:role/multi-account"
 providers:
   awsAccount1:
     entityId: https://signin.aws.amazon.com/saml
@@ -10,20 +12,20 @@ providers:
     attributes:
       https://aws.amazon.com/SAML/Attributes/RoleSessionName: "<#= repo.name #>"
       https://aws.amazon.com/SAML/Attributes/SessionDuration: "3600"
-      https://aws.amazon.com/SAML/Attributes/Role: "<#= repo.selectedRole #>,arn:aws:iam::<$= awsAccountId1 $>:saml-provider/saml.to"
+      https://aws.amazon.com/SAML/Attributes/Role: "<#= repo.selectedRole #>,<$= awsProviderArnAccount1 $>"
   awsAccount2:
     entityId: https://signin.aws.amazon.com/saml
     acsUrl: https://signin.aws.amazon.com/saml
     attributes:
       https://aws.amazon.com/SAML/Attributes/RoleSessionName: "<#= repo.name #>"
       https://aws.amazon.com/SAML/Attributes/SessionDuration: "3600"
-      https://aws.amazon.com/SAML/Attributes/Role: "<#= repo.selectedRole #>,arn:aws:iam::<$= awsAccountId2 $>:saml-provider/saml.to"
+      https://aws.amazon.com/SAML/Attributes/Role: "<#= repo.selectedRole #>,<$= awsProviderArnAccount2 $>"
 permissions:
   awsAccount1:
     roles:
-      - name: arn:aws:iam::<$= awsAccountId1 $>:role/multi-account
+      - name: <$= awsRoleArnAccount1 $>
         self: true
   awsAccount2:
     roles:
-      - name: arn:aws:iam::<$= awsAccountId2 $>:role/multi-account
+      - name: <$= awsRoleArnAccount2 $>
         self: true
