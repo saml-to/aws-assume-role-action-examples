@@ -1,3 +1,5 @@
+[< Go Back to Examples](https://github.com/saml-to/aws-assume-role-action-examples)
+
 # `reboot-instance-daily` Example
 
 ## Config File
