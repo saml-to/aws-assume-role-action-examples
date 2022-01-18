@@ -1,10 +1,6 @@
 name: Reboot Instance Daily
 
 on:
-  push:
-    branches:
-      - '*'
-  workflow_dispatch:
   schedule:
     - cron: '30 5 * * *'
 
@@ -12,7 +8,7 @@ jobs:
   reboot:
     runs-on: ubuntu-latest
     steps:
-      - uses: saml-to/assume-aws-role-action@main
+      - uses: saml-to/assume-aws-role-action@v1
         with:
           role: arn:aws:iam::656661431918:role/rebooter
         env:

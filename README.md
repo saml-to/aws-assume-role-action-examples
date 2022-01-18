@@ -1,13 +1,27 @@
-# `aws-assume-role-action` Examples
+# `reboot-instance-daily` Example
 
-See the links below for example repositories using this action:
+## Config File
 
-- Reboot an EC2 Instance every day
-- Run a `terraform apply`
-- Copy a React build to AWS S3
-- Authenticate with Multiple Regions
-- Authenticate using Multiple AWS Accounts
+[saml-to.yml](saml-to.yml)
 
-# Need additional examples?
+## GitHub Action
+
+[reboot-instance-daily.yml](.github/workflows/reboot-instance-daily.yml)
+
+## Identity Provider in AWS IAM
+
+![Identity Provider in AWS IAM](/images/identity-provider.png)
+
+## IAM Role & Policy
+
+![IAM Role](/images/rebooter-role.png)
+![Policy](/images/rebooter-policy.png)
+
+## Trust Relationship
+
+![Trust Relationship](/images/trust-relationship-visual.png)
+![Trust Relationship JSON](/images/trust-relationship-json.png)
+
+# Have a question?
 
 [Message us on Gitter](https://gitter.im/saml-to/assume-aws-role-action)
