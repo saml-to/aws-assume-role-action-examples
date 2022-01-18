@@ -31,3 +31,5 @@
 # Have a question?
 
 [Message us on Gitter](https://gitter.im/saml-to/assume-aws-role-action)
+
+![](https://sso.saml.to/github/px?example=tp)
