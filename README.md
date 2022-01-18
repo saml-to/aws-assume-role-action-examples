@@ -6,13 +6,13 @@
 
 [saml-to.yml](saml-to.yml)
 
-## Terraform Definition
-
-[main.tf](main.tf)
-
 ## GitHub Action
 
 [reboot-instance-daily.yml](.github/workflows/reboot-instance-daily.yml)
+
+## Terraform Definition
+
+[main.tf](main.tf)
 
 ## Identity Provider in AWS IAM
 
