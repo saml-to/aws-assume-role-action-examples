@@ -10,7 +10,7 @@
 
 [multiple-accounts.yml](.github/workflows/multiple-accounts.yml)
 
-**Note**: We could have used a Matrix for parallel, however, this demonstrates using outputs from two different in the same job
+**Note**: We could have used a Matrix for parallel processing, however, this demonstrates using outputs from two different role assumptions in the same job
 
 ## Identity Provider in AWS IAM
 
