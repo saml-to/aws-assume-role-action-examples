@@ -1,10 +1,14 @@
 [< Go Back to Examples](https://github.com/saml-to/aws-assume-role-action-examples)
 
-# `reboot-instance-daily` Example
+# `terraform-plan` Example
 
 ## Config File
 
 [saml-to.yml](saml-to.yml)
+
+## Terraform Definition
+
+[main.tf](main.tf)
 
 ## GitHub Action
 
@@ -16,8 +20,8 @@
 
 ## IAM Role & Policy
 
-![IAM Role](/images/rebooter-role.png)
-![Policy](/images/rebooter-policy.png)
+![IAM Role](/images/terraform-role.png)
+![Policy](/images/terraform-policy.png)
 
 ## Trust Relationship
 
