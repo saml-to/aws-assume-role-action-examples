@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  plan:
+  describe-instances:
     runs-on: ubuntu-latest
     strategy:
       matrix:
