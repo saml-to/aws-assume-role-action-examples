@@ -1,6 +1,6 @@
 [< Go Back to Examples](https://github.com/saml-to/aws-assume-role-action-examples)
 
-# `multiple-regions` Example
+# `multiple-accounts` Example
 
 ## Config File
 
@@ -8,21 +8,29 @@
 
 ## GitHub Action
 
-[multiple-regions.yml](.github/workflows/multiple-regions.yml)
+[multiple-accounts.yml](.github/workflows/multiple-accounts.yml)
+
+**Note**: We could have used a Matrix for parallel, however, this demonstrates using outputs from two different in the same job
 
 ## Identity Provider in AWS IAM
 
 ![Identity Provider in AWS IAM](/images/identity-provider.png)
 
+**Note**: Configuration in the 2nd account is identical!
+
 ## IAM Role & Policy
 
-![IAM Role](/images/multi-region-role.png)
-![Policy](/images/multi-region-policy.png)
+![IAM Role](/images/multi-account-role.png)
+![Policy](/images/multi-account-policy.png)
+
+**Note**: Configuration in the 2nd account is identical!
 
 ## Trust Relationship
 
 ![Trust Relationship](/images/trust-relationship-visual.png)
 ![Trust Relationship JSON](/images/trust-relationship-json.png)
+
+**Note**: Configuration in the 2nd account is identical!
 
 # Have a question?
 

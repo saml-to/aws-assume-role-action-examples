@@ -1,0 +1,42 @@
+name: Multiple Accounts
+
+on:
+  push:
+    branches:
+      - "*"
+  workflow_dispatch:
+
+jobs:
+  describe-instances:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: saml-to/assume-aws-role-action@v1
+        id: account1
+        with:
+          role: "arn:aws:iam::656661431918:role/multi-account"
+          provider: awsAccount1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: saml-to/assume-aws-role-action@v1
+        id: account2
+        with:
+          role: "arn:aws:iam::129924456780:role/multi-account"
+          provider: awsAccount2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          aws sts get-caller-identity
+          aws ec2 describe-instances
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.account1.outputs.accessKeyId }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.account1.outputs.secretAccessKey }}
+          AWS_SESSION_TOKEN: ${{ steps.account1.outputs.sessionToken }}
+          AWS_DEFAULT_REGION: ${{ steps.account1.outputs.region }}
+      - run: |
+          aws sts get-caller-identity
+          aws ec2 describe-instances
+        env:
+          AWS_ACCESS_KEY_ID: ${{ steps.account2.outputs.accessKeyId }}
+          AWS_SECRET_ACCESS_KEY: ${{ steps.account2.outputs.secretAccessKey }}
+          AWS_SESSION_TOKEN: ${{ steps.account2.outputs.sessionToken }}
+          AWS_DEFAULT_REGION: ${{ steps.account2.outputs.region }}
