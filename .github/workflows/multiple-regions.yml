@@ -1,4 +1,4 @@
-name: Terraform Plan
+name: Multiple Regions
 
 on:
   push:
@@ -9,13 +9,14 @@ on:
 jobs:
   plan:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        region: ["us-east-1", "us-east-2"]
     steps:
-      - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
       - uses: saml-to/assume-aws-role-action@v1
         with:
-          role: arn:aws:iam::656661431918:role/terraform
+          role: "arn:aws:iam::656661431918:role/multi-region"
+          region: ${{ matrix.region }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: terraform init
-      - run: terraform plan
+      - run: aws ec2 describe-instances

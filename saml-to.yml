@@ -2,7 +2,7 @@
 version: "20220101"
 variables:
   awsProviderArn: "arn:aws:iam::656661431918:saml-provider/saml.to"
-  awsRoleArn: "arn:aws:iam::656661431918:role/terraform"
+  awsRoleArn: "arn:aws:iam::656661431918:role/multi-region"
 providers:
   aws:
     entityId: https://signin.aws.amazon.com/saml

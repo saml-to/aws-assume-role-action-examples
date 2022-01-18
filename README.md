@@ -1,6 +1,6 @@
 [< Go Back to Examples](https://github.com/saml-to/aws-assume-role-action-examples)
 
-# `terraform-plan` Example
+# `multiple-regions` Example
 
 ## Config File
 
@@ -8,11 +8,7 @@
 
 ## GitHub Action
 
-[terraform-plan.yml](.github/workflows/terraform-plan.yml)
-
-## Terraform Definition
-
-[main.tf](main.tf)
+[multiple-regions.yml](.github/workflows/multiple-regions.yml)
 
 ## Identity Provider in AWS IAM
 
@@ -20,8 +16,8 @@
 
 ## IAM Role & Policy
 
-![IAM Role](/images/terraform-role.png)
-![Policy](/images/terraform-policy.png)
+![IAM Role](/images/multi-region-role.png)
+![Policy](/images/multi-region-policy.png)
 
 ## Trust Relationship
 
